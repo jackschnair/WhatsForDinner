@@ -1,0 +1,25 @@
+{
+  "name": "whatsfordinner",
+  "version": "1.0.0",
+  "description": "Prototype for collaborative meal-planning web application",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DemetriCassidy/WhatsForDinner.git"
+  },
+  "author": "Demetri Cassidy, Joshua Sullivan, and Jack Schnair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DemetriCassidy/WhatsForDinner/issues"
+  },
+  "homepage": "https://github.com/DemetriCassidy/WhatsForDinner#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
