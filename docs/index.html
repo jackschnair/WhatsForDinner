@@ -1,11 +1,47 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="utf-8">
         <title>What's For Dinner?</title>
+        <link href="../css/style.css" rel="stylesheet">
+        <meta name="keywords" content="">
+        <meta name="author" content="Demetri Cassidy, Jack Schnair, Joshua Sullivan">
+        <script src="../js/calender.js"></script> <!---------------------------------------------->
+        <script src="../js/tabs.js"></script>
+
     </head>
     <body>
-        Hello world!
+        <div id="wrapper">
+            <header>
+            </header>
+            
+            <h1>WhatsForDinner</h1>
+
+            <div id="content">
+
+                <div class="tab">
+                    <button class="tablinks" onclick="tabshift(event, 'Calender')">Calender</button>
+                    <button class="tablinks" onclick="tabshift(event, 'Shopping List')">Shopping List</button>
+                    <button class="tablinks" onclick="tabshift(event, 'Recipes')">Recipes</button>
+                </div>
+
+
+                <div id="Calender" class="tabcontent">
+                    <p>Calender Tab</p>
+                  </div>
+                  
+                  <div id="Shopping List" class="tabcontent">
+                    <p>Shopping List tab</p>
+                  </div>
+                  
+                  <div id="Recipes" class="tabcontent">
+                    <p>Recipes Tab</p>
+                  </div>
+
+            </div>
+        </div>
     </body>
 </html>
 
+<!DOCTYPE html>
