@@ -1,5 +1,6 @@
 # What's For Dinner
 
+
 **What's For Dinner** is a prototype for a hypothetical web application for
 collaborative meal planning. It was created as part of a semester-long project
 for the Software Engineering II class (COMP.4120) at UMass Lowell.
