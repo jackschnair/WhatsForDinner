@@ -7,7 +7,8 @@
         <link href="../css/style.css" rel="stylesheet">
         <meta name="keywords" content="">
         <meta name="author" content="Demetri Cassidy, Jack Schnair, Joshua Sullivan">
-        <script src="../js/calender.js"></script> <!---------------------------------------------->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="../js/calendar.js"></script>
         <script src="../js/tabs.js"></script>
 
     </head>
@@ -21,11 +22,10 @@
             <div id="content">
 
                 <div class="tab">
-                    <button class="tablinks" onclick="tabshift(event, 'Calender')">Calender</button>
+                    <button class="tablinks" id="initialTab" onclick="tabshift(event, 'Calender')">Calender</button>
                     <button class="tablinks" onclick="tabshift(event, 'Shopping List')">Shopping List</button>
                     <button class="tablinks" onclick="tabshift(event, 'Recipes')">Recipes</button>
                 </div>
-
 
                 <div id="Calender" class="tabcontent">
                     <p>Calender Tab</p>

@@ -1,3 +1,7 @@
+$(function () {
+    document.getElementById("initialTab").click();
+});
+
 function tabshift(evt, tabName) {
     var i, tabcontent, tablinks;
   
