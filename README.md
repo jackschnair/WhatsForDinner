@@ -10,6 +10,6 @@ Before the application's server can be run on a developer's local machine,
 make sure that Node.js and npm are installed. If they are not already installed,
 download the latest Node.js release from [here](https://nodejs.org/en/). Once
 this is done, install all required dependencies by running `npm install` in your
-terminal. From here, you can start the server by running `node index.js`. The
-interface can be accessed from your web browser of choice by visiting
-localhost:8000.
+terminal. From here, you can start the server by running `node index.js` in the 
+directory it's located in. The interface can be accessed from your web browser 
+of choice by visiting localhost:8000.
