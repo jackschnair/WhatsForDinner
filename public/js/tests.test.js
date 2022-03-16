@@ -1,7 +1,7 @@
-const { TestWatcher } = require('jest')
-const sum = require('./test')
+const sum = require('./tests')
 
-    test("my test", () => {
-        var result = test.sum(1,2)
-        expect(result).toBe(3);
-    })
+describe('my tests', () => {
+    it("my test", () => {
+        expect(sum(1,2)).toBe(3);
+    });
+})
