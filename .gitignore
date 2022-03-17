@@ -7,3 +7,5 @@ node_modules/
 # Unneccesary VSCode stuff
 *.code-workspace
 .vscode/
+test/tests.js
+test/tests.test.js
