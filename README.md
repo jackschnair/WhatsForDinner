@@ -13,3 +13,9 @@ this is done, install all required dependencies by running `npm install` in your
 terminal. From here, you can start the server by running `node index.js` in the 
 directory it's located in. The interface can be accessed from your web browser 
 of choice by visiting localhost:8000.
+
+## Testing
+To run unit tests on the program simply enter "npm test" into a terminal.
+
+## Continuous Integration
+The actions log in the GitHub repo shows bulid history
