@@ -9,3 +9,6 @@ node_modules/
 .vscode/
 test/tests.js
 test/tests.test.js
+
+# Jest stuff
+coverage/
