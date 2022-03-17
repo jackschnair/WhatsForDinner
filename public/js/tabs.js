@@ -1,4 +1,4 @@
-$(function () {
+$(function () { // automatically opens first tab
     document.getElementById("initialTab").click();
 });
 
@@ -20,4 +20,6 @@ function tabshift(evt, tabName) {
     // Displays tab, hilights active tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
+    return true
   }
+  
