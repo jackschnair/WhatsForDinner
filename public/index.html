@@ -8,7 +8,6 @@
         <meta name="keywords" content="">
         <meta name="author" content="Demetri Cassidy, Jack Schnair, Joshua Sullivan">
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <script src="js/calendar.js"></script>
         <script src="js/tabs.js"></script>
 
     </head>
@@ -27,8 +26,8 @@
                     <button class="tablinks" onclick="tabshift(event, 'Recipes')">Recipes</button>
                 </div>
 
-                <div id="Calendar" class="tabcontent">
-                    <p>Calendar Tab</p>
+                <div id="Calendar" class="tabcontent" style="overflow: auto;">
+                    <table style="border-collapse: collapse; padding: 0px; max-width: 100%; margin-left:auto; margin-right:auto;"></table>
                   </div>
                   
                   <div id="Shopping List" class="tabcontent">
@@ -44,4 +43,5 @@
     </body>
 </html>
 
+<script src="js/calendar.js"></script>
 <!DOCTYPE html>
