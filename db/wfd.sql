@@ -1,32 +1,50 @@
+-- Database: wfd
+
+-- DROP DATABASE IF EXISTS wfd;
+
+CREATE DATABASE wfd
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+COMMENT ON DATABASE wfd
+    IS 'what''s for dinner database';
+
+-- Above is Postgress stuff, below is our stuff
+
 DROP TABLE IF EXISTS Recipe;
 DROP TABLE IF EXISTS Has_Recipe;
 DROP TABLE IF EXISTS On_List;
 DROP TABLE IF EXISTS Grocery_List;
 DROP TABLE IF EXISTS In_Family;
-DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Family;
 
-CREATE TABLE User (
-    Email VARCHAR(40) PRIMARY KEY,
-    Name VARCHAR(30), 
-    Password VARCHAR(20)
+CREATE TABLE Users (
+    email VARCHAR(40) PRIMARY KEY,
+    name VARCHAR(30), 
+    password VARCHAR(20)
 );
 
--- User Inserts
-INSERT INTO User VALUES("cyclops@gmail.com", "Scott", "c123");
-INSERT INTO User VALUES("marvelgirl@gmail.com", "Jean", "m123");
-INSERT INTO User VALUES("phoenix@aol.com", "Rachel", "p123");
-INSERT INTO User VALUES("cable@yahoo.com", "Nathan", "c123");
-INSERT INTO User VALUES("havok@hotmail.com", "Alex", "h123");
-INSERT INTO User VALUES("vulcan@hotmail.com", "Gabriel", "v123");
-INSERT INTO User VALUES("wolverine@aol.com", "Logan", "w123");
-INSERT INTO User VALUES("wolverine@gmail.com", "Laura", "w123");
-INSERT INTO User VALUES("scout@gmail.com", "Gabby", "s123");
-INSERT INTO User VALUES("daken@yahoo.com", "Akihiro", "d123");
+-- Users Inserts
+INSERT INTO Users VALUES("cyclops@gmail.com", "Scott", "c123");
+INSERT INTO Users VALUES("marvelgirl@gmail.com", "Jean", "m123");
+INSERT INTO Users VALUES("phoenix@aol.com", "Rachel", "p123");
+INSERT INTO Users VALUES("cable@yahoo.com", "Nathan", "c123");
+INSERT INTO Users VALUES("havok@hotmail.com", "Alex", "h123");
+INSERT INTO Users VALUES("vulcan@hotmail.com", "Gabriel", "v123");
+INSERT INTO Users VALUES("wolverine@aol.com", "Logan", "w123");
+INSERT INTO Users VALUES("wolverine@gmail.com", "Laura", "w123");
+INSERT INTO Users VALUES("scout@gmail.com", "Gabby", "s123");
+INSERT INTO Users VALUES("daken@yahoo.com", "Akihiro", "d123");
 
 CREATE TABLE Family (
     FID INT PRIMARY KEY,
-    Name VARCHAR(30)
+    name VARCHAR(30)
 );
 
 -- Family Inserts
@@ -36,8 +54,8 @@ INSERT INTO Family VALUES(1001, "Wolverines");
 CREATE TABLE In_Family (
     email VARCHAR(40),
     FID INT, 
-    Own Boolean,
-    FOREIGN KEY (Email) REFERENCES User(Email) ON DELETE CASCADE ON UPDATE CASCADE,
+    own Boolean,
+    FOREIGN KEY (email) REFERENCES Users(email) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (FID) REFERENCES Family(FID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 

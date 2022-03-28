@@ -1,7 +1,4 @@
 
-
-
-
 function getRecipe (name) {
 
     var recipe_dict = {
