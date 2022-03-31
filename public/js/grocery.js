@@ -1,4 +1,16 @@
 
+
+var json_data = require('../data/grocery_list.json');
+
+/*let lists = getLists();
+for (i in lists) { 
+    console.log(lists[i])
+    let items = getListItems(lists[i]);
+    for (j in items)
+        console.log("    " + items[j]);
+}*/
+    
+
 function createList(listName) {
     const express = require('express');
     const app = express();
@@ -39,5 +51,27 @@ function createList(listName) {
     return true;
 }
 
-module.exports = createList
+function getLists(){
+    let arr = [];
+    for (var i in json_data.lists){
+        //console.log(json_data.lists[i]["list"]);
+        arr.push(json_data.lists[i]["list"])
+    }
+    return arr;
+}
+
+function getListItems (name){
+    let arr = [];
+    for (var i in json_data.lists){
+        if (json_data.lists[i]["list"] == name){
+            for (var j in json_data.lists[i]["items"]){
+                //console.log(json_data.lists[i]["ingredients"][j]);
+                arr.push(json_data.lists[i]["items"][j]["item"]);
+            }
+        }
+    }
+    return arr;
+}
+
+module.exports = {createList: createList, getLists: getLists, getListItems: getListItems}
 

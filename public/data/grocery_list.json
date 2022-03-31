@@ -1,0 +1,26 @@
+{"lists":[
+    {"list":"Weekly Shopping", "items":[
+        {"item":"Turkey"},
+        {"item":"Bread"},
+        {"item":"Cereal"},
+        {"item":"Milk"},
+        {"item":"Cookies"},
+        {"item":"Pasta"}
+    ]},
+    {"list":"Barbeque", "items":[
+        {"item":"Hamburger Meat"},
+        {"item":"Hotdogs"},
+        {"item":"Buns"},
+        {"item":"Ketchup"},
+        {"item":"Mustard"},
+        {"item":"Chips"}
+    ]},
+    {"list":"Birthday Party", "items":[
+        {"item":"Cake"},
+        {"item":"Paper Plates"},
+        {"item":"Plastic Utensils"},
+        {"item":"Candles"},
+        {"item":"Icecream"},
+        {"item":"Soda"}
+    ]}
+]}

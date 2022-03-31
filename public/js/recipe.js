@@ -1,6 +1,6 @@
-//const { Client } = require("pg")
+/*const { Client } = require("pg")
 
-/*const client = new Client({
+const client = new Client({
     host: "localhost",
     user: "postgres",
     port: 5432,
@@ -8,25 +8,27 @@
     database: "wfd"
 })*/
 
-let mock_recipes = [
-    "Chicken", 
-    "Pizza",
-    "Salad",
-];
-//for (var i in mock_recipes)
-  //  console.log(mock_recipes[i]);
+var json_data = require('../data/recipes.json');
 
-let recipe_list = document.querySelector("#recipe_list");
+/*var recipe_titles = getRecipeTitles();
+console.log("titles: ")
+for (i in recipe_titles) { 
+    console.log(recipe_titles[i])
+    let ingredients = getRecipe(recipe_titles[i]);
+    for (j in ingredients)
+        console.log("    " + ingredients[j]);
+}*/
+    
 
-//var all_recipes = getAllRecipes();
+/*let recipe_list = document.querySelector("#recipe_list");
 
-mock_recipes.forEach((item) => {
+recipe_titles.forEach((item) => {
     let li = document.createElement("li");
     li.innerText = item;
     recipe_list.appendChild(li);
-  });
+  });*/
 
-function getAllRecipes() {
+/*function getAllRecipes() {
     client.connect();
 
     client.query('SELECT title FROM public."Recipe"', (err, res)=>{
@@ -47,19 +49,28 @@ function getAllRecipes() {
         }
         client.end;
     })
+}*/
+
+function getRecipeTitles(){
+    let arr = [];
+    for (var i in json_data.recipes){
+        //console.log(json_data.recipes[i]["title"]);
+        arr.push(json_data.recipes[i]["title"])
+    }
+    return arr;
 }
 
-function getRecipe (name) {
-
-    var recipe_dict = {
-        "recipe1": "ingredients 1, 2 and 3",
-        "recipe2": "other ingredients"
-    };
-
-    var val = recipe_dict[name];
-    console.log(val);
-
-    return recipe_dict[name];
+function getRecipe (name){
+    let arr = [];
+    for (var i in json_data.recipes){
+        if (json_data.recipes[i]["title"] == name){
+            for (var j in json_data.recipes[i]["ingredients"]){
+                //console.log(json_data.recipes[i]["ingredients"][j]);
+                arr.push(json_data.recipes[i]["ingredients"][j]["ingredient"]);
+            }
+        }
+    }
+    return arr;
 }
 
-module.exports = getRecipe
+module.exports = {getRecipe, getRecipeTitles}
