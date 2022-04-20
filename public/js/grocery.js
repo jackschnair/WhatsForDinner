@@ -1,14 +1,35 @@
+//import {jest} from '@jest/globals'
 
+console.log("Running Grocery.js");
 
-var json_data = require('../data/grocery_list.json');
+//var json_data = require('../data/grocery_list.json');
 
-/*let lists = getLists();
-for (i in lists) { 
-    console.log(lists[i])
-    let items = getListItems(lists[i]);
-    for (j in items)
-        console.log("    " + items[j]);
-}*/
+var json_data = {"lists":[
+    {"list":"Weekly Shopping", "items":[
+        {"item":"Turkey"},
+        {"item":"Bread"},
+        {"item":"Cereal"},
+        {"item":"Milk"},
+        {"item":"Cookies"},
+        {"item":"Pasta"}
+    ]},
+    {"list":"Barbeque", "items":[
+        {"item":"Hamburger Meat"},
+        {"item":"Hotdogs"},
+        {"item":"Buns"},
+        {"item":"Ketchup"},
+        {"item":"Mustard"},
+        {"item":"Chips"}
+    ]},
+    {"list":"Birthday Party", "items":[
+        {"item":"Cake"},
+        {"item":"Paper Plates"},
+        {"item":"Plastic Utensils"},
+        {"item":"Candles"},
+        {"item":"Icecream"},
+        {"item":"Soda"}
+    ]}
+]}
     
 
 function createList(listName) {
@@ -72,6 +93,34 @@ function getListItems (name){
     }
     return arr;
 }
+
+
+    
+
+//let grocery_list = 
+const lists = document.querySelector("#shopping_lists");
+
+console.log(lists);
+
+var list_titles = getLists();
+
+for (i in list_titles) { 
+    console.log(list_titles[i])
+    lists.innerHTML += ('<ul>' + list_titles[i]); // start and name list
+    let ingredients = getListItems(list_titles[i]);
+    for (j in ingredients) {
+        console.log("    " + ingredients[j]);
+        lists.innerHTML += ('<li>' + ingredients[j] + '</li>'); // append to list
+    }
+    lists.innerHTML += '</ul>'; // close list
+}
+
+/*
+list_titles.forEach((item) => {
+    let li = document.createElement("li");
+    li.innerText = item;
+    grocery_list.appendChild(li);
+  });*/
 
 module.exports = {createList: createList, getLists: getLists, getListItems: getListItems}
 
